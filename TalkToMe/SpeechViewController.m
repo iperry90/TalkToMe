@@ -41,7 +41,6 @@
 
 - (IBAction)speedSlider:(id)sender {
     self.speedValue = self.speed.value;
-    NSLog(@"%f",self.speed.value);
 }
 
 // dismiss the keyboard, could be done a better way, but good for now
