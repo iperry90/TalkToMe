@@ -1,21 +1,113 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4451" systemVersion="13A461" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="uuz-nh-ndZ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3676"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--Speech View Controller - Speech Fun-->
+        <scene sceneID="cwT-3M-63r">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                <viewController id="uuz-nh-ndZ" customClass="SpeechViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0vO-Be-UL1"/>
+                        <viewControllerLayoutGuide type="bottom" id="N2W-xQ-y2T"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rGn-GT-4xz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="lK9-6v-CgN">
+                                <rect key="frame" x="18" y="467" width="284" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="fVR-48-BzF"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="speedSlider:" destination="uuz-nh-ndZ" eventType="valueChanged" id="6jA-se-4Lc"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLA-9I-dPl">
+                                <rect key="frame" x="20" y="438" width="50" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nah-qP-Usq">
+                                <rect key="frame" x="0.0" y="268" width="320" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hello" translatesAutoresizingMaskIntoConstraints="NO" id="wer-7S-MfE">
+                                <rect key="frame" x="20" y="109" width="280" height="124"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What to say" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQc-8e-UgJ">
+                                <rect key="frame" x="20" y="80" width="92" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ErT-dm-IVq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZe-wC-dvZ">
+                                <rect key="frame" x="117" y="42" width="86" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="86" id="lgH-vY-dth"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Speak!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="speakPressed:" destination="uuz-nh-ndZ" eventType="touchUpInside" id="sZZ-E3-rqL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPn-3N-g4g">
+                                <rect key="frame" x="20" y="248" width="76" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wer-7S-MfE" firstAttribute="centerX" secondItem="iZe-wC-dvZ" secondAttribute="centerX" id="5jF-mN-rXx"/>
+                            <constraint firstItem="wer-7S-MfE" firstAttribute="top" secondItem="iZe-wC-dvZ" secondAttribute="bottom" constant="37" id="7Rk-Kc-hF4"/>
+                            <constraint firstItem="wer-7S-MfE" firstAttribute="leading" secondItem="MPn-3N-g4g" secondAttribute="leading" id="8qM-Lr-R2L"/>
+                            <constraint firstItem="N2W-xQ-y2T" firstAttribute="top" secondItem="lK9-6v-CgN" secondAttribute="bottom" constant="58" id="ARa-Z1-yQ0"/>
+                            <constraint firstItem="MPn-3N-g4g" firstAttribute="top" secondItem="wer-7S-MfE" secondAttribute="bottom" constant="15" id="CyQ-90-r7X"/>
+                            <constraint firstItem="wer-7S-MfE" firstAttribute="trailing" secondItem="lK9-6v-CgN" secondAttribute="trailing" id="Gbb-3b-XdP"/>
+                            <constraint firstItem="QQc-8e-UgJ" firstAttribute="leading" secondItem="rGn-GT-4xz" secondAttribute="leading" constant="20" symbolic="YES" id="IoY-u8-a1h"/>
+                            <constraint firstItem="vLA-9I-dPl" firstAttribute="top" secondItem="nah-qP-Usq" secondAttribute="bottom" constant="8" symbolic="YES" id="Jhr-f0-xN1"/>
+                            <constraint firstItem="iZe-wC-dvZ" firstAttribute="top" secondItem="0vO-Be-UL1" secondAttribute="bottom" constant="22" id="SzZ-AZ-7xB"/>
+                            <constraint firstItem="QQc-8e-UgJ" firstAttribute="top" secondItem="0vO-Be-UL1" secondAttribute="bottom" constant="60" id="VUg-ec-EXD"/>
+                            <constraint firstItem="lK9-6v-CgN" firstAttribute="top" secondItem="vLA-9I-dPl" secondAttribute="bottom" constant="8" symbolic="YES" id="VnN-rO-GVa"/>
+                            <constraint firstItem="nah-qP-Usq" firstAttribute="centerX" secondItem="lK9-6v-CgN" secondAttribute="centerX" id="bkg-Ee-8tT"/>
+                            <constraint firstItem="wer-7S-MfE" firstAttribute="top" secondItem="QQc-8e-UgJ" secondAttribute="bottom" constant="8" symbolic="YES" id="cor-EL-HTH"/>
+                            <constraint firstItem="vLA-9I-dPl" firstAttribute="leading" secondItem="lK9-6v-CgN" secondAttribute="leading" id="dk4-Ng-fIx"/>
+                            <constraint firstItem="QQc-8e-UgJ" firstAttribute="leading" secondItem="wer-7S-MfE" secondAttribute="leading" id="fj0-3h-R58"/>
+                            <constraint firstItem="nah-qP-Usq" firstAttribute="leading" secondItem="rGn-GT-4xz" secondAttribute="leading" id="mSZ-UZ-SjY"/>
+                            <constraint firstItem="nah-qP-Usq" firstAttribute="top" secondItem="wer-7S-MfE" secondAttribute="bottom" constant="35" id="s6F-Wx-hbi"/>
+                            <constraint firstItem="vLA-9I-dPl" firstAttribute="leading" secondItem="MPn-3N-g4g" secondAttribute="leading" id="vIs-w2-TEl"/>
+                            <constraint firstAttribute="trailing" secondItem="wer-7S-MfE" secondAttribute="trailing" constant="20" symbolic="YES" id="w4h-jT-q47"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Speech Fun" id="UWW-6u-41E"/>
+                    <connections>
+                        <outlet property="languagePickerView" destination="nah-qP-Usq" id="lGe-Hp-dmP"/>
+                        <outlet property="speed" destination="lK9-6v-CgN" id="Sbx-Um-Y1G"/>
+                        <outlet property="textView" destination="wer-7S-MfE" id="UwI-mD-C9C"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cdb-c8-C2U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-1" y="98"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
